@@ -18,7 +18,19 @@ WHERE DATE_PART('year',hire_date) = 1986
 ORDER BY emp_no;
 
 --List the manager of each department with the following information: department number, department name, the manager's employee number, last name, first name.
-
+SELECT dept_manager.dept_no, 
+departments.dept_name,
+dept_manager.emp_no,
+employees.last_name, 
+employees.first_name,
+dept_manager.from_date,
+dept_manager.to_date
+FROM dept_manager
+LEFT JOIN departments
+ON dept_manager.dept_no = departments.dept_no
+LEFT JOIN employees 
+ON dept_manager.emp_no = employees.emp_no
+ORDER BY emp_no
 
 --List the department of each employee with the following information: employee number, last name, first name, and department name.
 SELECT

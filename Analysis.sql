@@ -13,6 +13,9 @@ ON employees.emp_no = salaries.emp_no
 ORDER BY emp_no
 
 --List first name, last name, and hire date for employees who were hired in 1986.
+SELECT * FROM employees
+WHERE DATE_PART('year',hire_date) = 1986
+ORDER BY emp_no;
 
 --List the manager of each department with the following information: department number, department name, the manager's employee number, last name, first name.
 
